@@ -12,15 +12,15 @@ jobs:
           name: Setup CLOUD SDK
           command: |
             echo $GOOGLE_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
-            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-            gcloud --quiet auth configure-docker
-      - run:
-          name: Push docker image
-          command: |
-            docker build -t go-web-server .
-            TAG=gcr.io/deployflow-project/go-web-server:pushed-'date +%Y%m%d%H%M%S'
-            docker tag go-web-server $TAG
-            LATEST_TAG=gcr.io/deployflow-project/go-web-server:latest
-            docker tag go-web-server $LATEST_TAG
-            docker push $LATEST_TAG
+            #             gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            #             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            #             gcloud --quiet auth configure-docker
+            #       - run:
+            #           name: Push docker image
+            #           command: |
+            #             docker build -t go-web-server .
+            #             TAG=gcr.io/deployflow-project/go-web-server:pushed-'date +%Y%m%d%H%M%S'
+            #             docker tag go-web-server $TAG
+            #             LATEST_TAG=gcr.io/deployflow-project/go-web-server:latest
+            #             docker tag go-web-server $LATEST_TAG
+            #             docker push $LATEST_TAG
