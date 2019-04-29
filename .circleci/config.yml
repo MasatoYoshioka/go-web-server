@@ -12,8 +12,8 @@ jobs:
           name: Setup CLOUD SDK
           command: |
             echo $GOOGLE_SERVICE_KEY | gcloud auth activate-service-account --key-file=-
-            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            gcloud --quiet config set project deployflow-project
+            gcloud --quiet config set compute/zone asia-east1-b
             gcloud --quiet auth configure-docker
       - run:
           name: Push docker image
