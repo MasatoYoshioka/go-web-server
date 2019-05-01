@@ -22,5 +22,5 @@ jobs:
             TAG=gcr.io/deployflow-project/go-web-server:pushed-'date +%Y%m%d%H%M%S'
             docker tag go-web-server $TAG
             LATEST_TAG=gcr.io/deployflow-project/go-web-server:latest
-            docker tag go-web-server:$LATEST_TAG
+            docker tag go-web-server $LATEST_TAG
             docker push $LATEST_TAG
